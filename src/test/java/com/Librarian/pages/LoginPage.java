@@ -12,7 +12,17 @@ public class LoginPage extends BasePage{
     @FindBy(id = "inputPassword")
     private WebElement password;
 
+    @FindBy(css = "[class='alert alert-danger']")
+    private WebElement warningMessage;
 
+    public String getWarningMessageText() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return warningMessage.getText().trim();
+    }
 
     public void login(String usernameValue, String passwordValue) {
         username.sendKeys(usernameValue);
@@ -26,22 +36,22 @@ public class LoginPage extends BasePage{
         username.sendKeys(usernameValue);
         password.sendKeys(passwordValue, Keys.ENTER);
     }
-/*
+
     public void login(String role) {
         String usernameValue = "";
-        String passwordValue = ConfigurationReader.getProperty("password");
+        String passwordValue = "";
 
-        if (role.equalsIgnoreCase("sales manager")) {
-            usernameValue = ConfigurationReader.getProperty("salesmanager.username");
-        } else if (role.equalsIgnoreCase("driver")) {
-            usernameValue = ConfigurationReader.getProperty("driver.username");
-        } else {
-            usernameValue = ConfigurationReader.getProperty("storemanager.username");
+        if (role.equalsIgnoreCase("student1")) {
+            usernameValue = ConfigurationReader.getProperty("student1.username");
+            passwordValue = ConfigurationReader.getProperty("student1.password");
+        } else if (role.equalsIgnoreCase("student2")) {
+            usernameValue = ConfigurationReader.getProperty("student2.username");
+            passwordValue = ConfigurationReader.getProperty("student2.password");
         }
 
         username.sendKeys(usernameValue);
         password.sendKeys(passwordValue, Keys.ENTER);
     }
 
- */
+
 }

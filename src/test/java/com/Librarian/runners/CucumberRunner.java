@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/Librarian/step_definitions",
         dryRun = false,
-        tags = "@edit_book", //"@search_book","@book_Categories"
+        tags = "@login",
         publish = true
 )
 public class CucumberRunner {

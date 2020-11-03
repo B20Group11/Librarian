@@ -1,0 +1,63 @@
+package com.Librarian.step_definitions;
+
+import com.Librarian.pages.LoginPage;
+import com.Librarian.utils.BrowserUtils;
+import com.Librarian.utils.Driver;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+
+public class LoginStepDefinitions {
+    WebDriver driver;
+    LoginPage loginPage = new LoginPage();
+
+    @Given("user is on the login page")
+    public void user_is_on_the_login_page() {
+        Driver.getDriver().get("http://library2.cybertekschool.com/login.html");
+    }
+
+    @When("user logs in")
+    public void user_logs_in() throws InterruptedException {
+        loginPage.login();
+        Thread.sleep(3000);
+    }
+
+    @Then("user should see Dashboard page")
+    public void user_should_see_Dashboard_page() {
+        String expected = "Dashboard";
+        String actual = loginPage.getPageSubTitleText().trim();
+
+        Assert.assertEquals("Title is not correct!", expected, actual);
+        System.out.println("I see the Dashboard page!");
+        Driver.closeDriver();
+    }
+    @Then("user should see Book Management page")
+    public void user_should_see_Book_Management_page() {
+        BrowserUtils.wait(2);
+        String expected = "Book Management";
+        String actual = loginPage.getPageSubTitleTextStudent();
+
+        Assert.assertEquals("Title is not correct!", expected, actual);
+        System.out.println("I see the Book Management page!");
+        Driver.closeDriver();
+    }
+
+    @When("user logs in as a {string}")
+    public void user_logs_in_as_a(String string) {
+        loginPage.login(string);
+    }
+
+    @When("user logs in with {string} username and {string} password")
+    public void user_logs_in_with_username_and_password(String string, String string2) {
+        loginPage.login(string, string2);
+    }
+
+    @Then("user verifies that {string} message is displayed")
+    public void user_verifies_that_message_is_displayed(String expected) {
+        String actualResult = loginPage.getWarningMessageText();
+        Assert.assertEquals(expected, actualResult);
+        Driver.closeDriver();
+    }
+}
