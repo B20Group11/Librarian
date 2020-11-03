@@ -12,13 +12,13 @@ Feature: As user I want to be able to login under different roles
   Scenario: Parametrized login
     Given user is on the login page
     When user logs in as a "student1"
-    Then user should see Book Management page
+    Then user should see Books page
 
   @student2
   Scenario: Parametrized login
     Given user is on the login page
     When user logs in as a "student2"
-    Then user should see Book Management page
+    Then user should see Books page
 
   @negative_login1
   Scenario: Invalid password

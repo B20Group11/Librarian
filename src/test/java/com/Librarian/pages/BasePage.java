@@ -13,11 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
 
-    @FindBy(className = "nav-link")
+    @FindBy(className = "spapp-created")
     protected WebElement pageSubTitle;
-
-    @FindBy(xpath = "//*[@class=\"portlet-title\"]")
-    protected WebElement pageSubTitleStudent;
 
     @FindBy(xpath = "(//button[contains(text(),'Save and Close')])[1]")
     protected WebElement saveAndCloseBtn;
@@ -29,10 +26,7 @@ public abstract class BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
     public String getPageSubTitleText() {
-        return pageSubTitle.getText();
-    }
-    public String getPageSubTitleTextStudent() {
-        return pageSubTitleStudent.getText();
+        return pageSubTitle.getAttribute("id");
     }
 
     public void navigateTo(String module) {

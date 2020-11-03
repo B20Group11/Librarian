@@ -26,18 +26,17 @@ public class LoginStepDefinitions {
 
     @Then("user should see Dashboard page")
     public void user_should_see_Dashboard_page() {
-        String expected = "Dashboard";
-        String actual = loginPage.getPageSubTitleText().trim();
+        String expected = "Dashboard".toLowerCase();
+        String actual = loginPage.getPageSubTitleText().trim().toLowerCase();
 
         Assert.assertEquals("Title is not correct!", expected, actual);
         System.out.println("I see the Dashboard page!");
         Driver.closeDriver();
     }
-    @Then("user should see Book Management page")
-    public void user_should_see_Book_Management_page() {
-        BrowserUtils.wait(2);
-        String expected = "Book Management";
-        String actual = loginPage.getPageSubTitleTextStudent();
+    @Then("user should see Books page")
+    public void user_should_see_Books_page() {
+        String expected = "Books".toLowerCase();
+        String actual = loginPage.getPageSubTitleText().trim().toLowerCase();
 
         Assert.assertEquals("Title is not correct!", expected, actual);
         System.out.println("I see the Book Management page!");
