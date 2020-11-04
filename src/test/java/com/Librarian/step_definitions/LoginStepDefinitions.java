@@ -1,5 +1,6 @@
 package com.Librarian.step_definitions;
 
+import com.Librarian.pages.BooksPage;
 import com.Librarian.pages.LoginPage;
 import com.Librarian.utils.BrowserUtils;
 import com.Librarian.utils.Driver;
@@ -12,8 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginStepDefinitions {
-    WebDriver driver;
+    //WebDriver driver;
     LoginPage loginPage = new LoginPage();
+
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
