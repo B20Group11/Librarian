@@ -8,6 +8,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginStepDefinitions {
     WebDriver driver;
@@ -35,6 +37,10 @@ public class LoginStepDefinitions {
     }
     @Then("user should see Books page")
     public void user_should_see_Books_page() {
+
+       BrowserUtils.wait(2);
+       // new WebDriverWait(driver,20).until(ExpectedConditions.visibilityOf("Books"));
+
         String expected = "Books".toLowerCase();
         String actual = loginPage.getPageSubTitleText().trim().toLowerCase();
 
