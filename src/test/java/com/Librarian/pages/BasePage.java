@@ -31,7 +31,7 @@ public abstract class BasePage {
 
     public void navigateTo(String module) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-        String moduleXpath = module;
+        String moduleXpath = module.toLowerCase();
 
         WebElement moduleElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@href='#"+moduleXpath+"']"))); ////*[@id="menu_item"]/li[1]/a
         wait.until(ExpectedConditions.elementToBeClickable(moduleElement)).click();

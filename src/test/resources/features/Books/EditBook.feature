@@ -3,7 +3,7 @@ Feature:  As Librarian, I want to be able to edit book
   @edit_book
   Scenario: 1. edit some book
     Given user is on the login page
-    And user logs in as a "librarian"
+    When user logs in
     And user navigates to "Books"
     And user clicks on edit book button
     When user edit book information
