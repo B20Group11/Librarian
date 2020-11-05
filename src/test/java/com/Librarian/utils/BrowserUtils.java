@@ -16,8 +16,6 @@ public class BrowserUtils {
         }
     }
 
-
-
     /**
      * Wait method - used to provide a default waiting time between each consecutive test step/command across the entire test script.
      * Thus, the subsequent test step would only execute when the specified amount of time has elapsed after executing the previous test step/command.
