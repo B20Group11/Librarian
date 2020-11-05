@@ -16,7 +16,7 @@ public abstract class BasePage {
     @FindBy(className = "spapp-created")
     protected WebElement pageSubTitle;
 
-    @FindBy(className = "btn btn-primary")
+    @FindBy(xpath = "//button[.='Save changes']")
     protected WebElement saveChangesBtn;
 
     @FindBy(css = "[class='loader-mask']")
