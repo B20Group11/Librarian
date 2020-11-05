@@ -13,6 +13,21 @@ public class BooksPage extends BasePage {
     @FindBy(xpath = "//table[@id='tbl_books']//tr[1]/td[1]")
     private WebElement editBookBtn;
 
+    @FindBy(name = "name")
+    private WebElement bookNameInputBox;
+    @FindBy(name = "isbn")
+    private WebElement isbnInputBox;
+    @FindBy(name = "year")
+    private WebElement yearInputBox;
+    @FindBy(xpath = "//input[@placeholder='Author']")
+    private WebElement authorInputBox;
+    @FindBy(id = "book_group_id")
+    private WebElement bookCategoryDropDown;
+    @FindBy(id = "description")
+    private WebElement descriptionInputBox;
+
+
+
 
     public void editBookBtn(){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),20);
@@ -20,7 +35,7 @@ public class BooksPage extends BasePage {
         System.out.println("Clicking on 'Edit book' button");
     }
 
-    WebDriver driver;
+
     public void editBookBtn(int number){
        if (number>=1) {
             WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
@@ -31,5 +46,30 @@ public class BooksPage extends BasePage {
             System.out.println("Number cannot be 0");
       }
     }
+
+    public void enterBookName(String bookName){
+      BrowserUtils.enterText(bookNameInputBox,bookName);
+    }
+
+    public void enterIsbn(String isbn){
+        BrowserUtils.enterText(isbnInputBox,isbn);
+    }
+
+    public void enterYear(String year){
+        BrowserUtils.enterText(yearInputBox,year);
+    }
+
+    public void enterAuthor(String author){
+        BrowserUtils.enterText(authorInputBox,author);
+    }
+
+    public void selectBookCategory(String bookCategory){
+        BrowserUtils.selectValue(bookCategoryDropDown,bookCategory);
+    }
+
+    public void enterDescription(String description){
+        BrowserUtils.enterText(descriptionInputBox,description);
+    }
+
 
 }

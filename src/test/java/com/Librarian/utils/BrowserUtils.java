@@ -1,11 +1,14 @@
 package com.Librarian.utils;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserUtils {
+
     private static WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
     public static void wait(int seconds) {
@@ -83,5 +86,9 @@ public class BrowserUtils {
      * than it will clean the input-box and .sendKeys()
      */
 
+    public static void selectValue(WebElement element, String text){
+        Select select = new Select(element);
+        select.selectByVisibleText(text);
+    }
 
 }

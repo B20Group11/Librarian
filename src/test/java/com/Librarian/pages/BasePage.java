@@ -16,8 +16,8 @@ public abstract class BasePage {
     @FindBy(className = "spapp-created")
     protected WebElement pageSubTitle;
 
-    @FindBy(xpath = "(//button[contains(text(),'Save and Close')])[1]")
-    protected WebElement saveAndCloseBtn;
+    @FindBy(className = "btn btn-primary")
+    protected WebElement saveChangesBtn;
 
     @FindBy(css = "[class='loader-mask']")
     protected WebElement loaderMask;
@@ -38,8 +38,8 @@ public abstract class BasePage {
 
     }
 
-    public void clickSaveAndClose(){
-        BrowserUtils.clickOnElement(saveAndCloseBtn);
+    public void clickSaveChanges(){
+        BrowserUtils.clickOnElement(saveChangesBtn);
     }
 }
 
