@@ -17,7 +17,7 @@ public class BooksStepDefinitions {
 
     @Given("user clicks on edit book button")
     public void user_clicks_on_edit_book_button() {
-
+        booksPage.editBookBtn(2);
     }
 
     @When("user edit book information")
