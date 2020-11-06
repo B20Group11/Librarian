@@ -9,9 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
+
+    Wait wait = new WebDriverWait(Driver.getDriver(),20);
 
     @FindBy(className = "spapp-created")
     protected WebElement pageSubTitle;

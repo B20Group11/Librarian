@@ -9,10 +9,10 @@ Feature:  As Librarian, I want to be able to edit book
     Then user verify quantity of books "<role>"
      Examples: data set
     |role|
-  #  |5   |
-  #  |10  |
-  #  |15  |
+    |5   |
+    |10  |
+    |15  |
     |50  |
-  #  |100 |
-  #  |200 |
-  #  |500 |
+    |100 |
+    |200 |
+    |500 |
