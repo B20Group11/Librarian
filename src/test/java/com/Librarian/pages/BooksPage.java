@@ -85,13 +85,15 @@ public class BooksPage extends BasePage {
     }
 
 
-    public void listOfLinks(){
+    public void verificationQuantity(String string ){
         int link1 = 0;
         for(WebElement each  : links ) {
             link1 ++;
         }
-
-    //    Assert.assertEquals();
+        String aVal = "" + link1;
+     //   Assert.assertEquals(string, aVal);
+        System.out.println("Entered Value: " + string );
+        System.out.println("Expected Value: " + aVal);
     }
 
 

@@ -1,6 +1,6 @@
 package com.Librarian.step_definitions;
 
-import com.Librarian.pages.MeerimPAge;
+import com.Librarian.pages.MeerimPage;
 import com.Librarian.utils.BrowserUtils;
 import com.Librarian.utils.Driver;
 import io.cucumber.java.en.Then;
@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class MeerimStepDefin {
-    MeerimPAge meerimPage=new MeerimPAge();
+    MeerimPage meerimPage=new MeerimPage();
 
     @When("user click on Book Categories dropdown menu,select {string}")
     public void user_click_on_book_categories_dropdown_menu_select(String categories) {

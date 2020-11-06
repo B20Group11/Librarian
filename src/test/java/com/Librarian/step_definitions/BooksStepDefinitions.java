@@ -63,11 +63,12 @@ public class BooksStepDefinitions {
     }
 
 
-
-    @Then("user verify quantity of books")
-    public void user_verify_quantity_of_books() {
-
+    @Then("user verify quantity of books {string}")
+    public void user_verify_quantity_of_books(String string) {
+        booksPage.verificationQuantity(string);
     }
+
+
 
 
 

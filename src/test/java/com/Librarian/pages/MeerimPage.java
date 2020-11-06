@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class MeerimPAge extends BasePage{
+public class MeerimPage extends BasePage{
     @FindBy(id="book_categories")
     private WebElement bookCategoriesDropDown;
 
