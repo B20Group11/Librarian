@@ -2,12 +2,15 @@ package com.Librarian.pages;
 
 import com.Librarian.utils.BrowserUtils;
 import com.Librarian.utils.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public class BooksPage extends BasePage {
     @FindBy(xpath = "//table[@id='tbl_books']//tr[1]/td[1]")
@@ -25,6 +28,12 @@ public class BooksPage extends BasePage {
     private WebElement bookCategoryDropDown;
     @FindBy(id = "description")
     private WebElement descriptionInputBox;
+    @FindBy(xpath = "//select[@class='form-control input-sm input-xsmall input-inline']")
+    private WebElement  showRecordsDropDown;
+    @FindBy(xpath = "//table[@id='tbl_books']//tr//td[1]")
+    private  List<WebElement> links;
+
+
 
 
 
@@ -70,6 +79,25 @@ public class BooksPage extends BasePage {
     public void enterDescription(String description){
         BrowserUtils.enterText(descriptionInputBox,description);
     }
+
+    public void selectShowRecords(String showRecords){
+        BrowserUtils.selectValue(showRecordsDropDown,showRecords);
+    }
+
+
+    public void listOfLinks(){
+        int link1 = 0;
+        for(WebElement each  : links ) {
+            link1 ++;
+        }
+
+    //    Assert.assertEquals();
+    }
+
+
+
+
+
 
 
 }

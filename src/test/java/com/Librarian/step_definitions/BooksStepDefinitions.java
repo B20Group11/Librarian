@@ -5,6 +5,7 @@ import com.Librarian.pages.BooksPage;
 import com.Librarian.pages.LoginPage;
 import com.Librarian.utils.BrowserUtils;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.Map;
@@ -55,6 +56,19 @@ public class BooksStepDefinitions {
     public void user_clicks_on_save_changes_button() {
         booksPage.clickSaveChanges();
     }
+
+    @When("user click and choose {string}")
+    public void user_click_and_choose(String string) {
+        booksPage.selectShowRecords(string);
+    }
+
+
+
+    @Then("user verify quantity of books")
+    public void user_verify_quantity_of_books() {
+
+    }
+
 
 
 

@@ -33,6 +33,6 @@ Feature: User should be able to maintain the books by using Books module
   Scenario: 1. search book by "Author and Name"
     When user put information on search box
       | Book Name      | The hunger games : the ultimate quiz book |
-      | Author          | Goldstein, Jack |
+      | Author         | Goldstein, Jack                           |
 
 
