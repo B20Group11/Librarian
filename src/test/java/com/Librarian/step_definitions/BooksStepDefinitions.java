@@ -99,6 +99,11 @@ public class BooksStepDefinitions {
         Driver.closeDriver();
     }
 
+    @When("user clicks on add book button")
+    public void user_clicks_on_add_book_button() {
+       booksPage.addBookBtn();
+    }
+
 
 
 

@@ -42,6 +42,9 @@ public class BooksPage extends BasePage {
     @FindBy(xpath = "//table[@id='tbl_books']//tr/td[5]")
     private List<WebElement> displayCategories;
 
+    @FindBy(xpath = "//*[@id=\"books\"]/div[1]/div[1]/span/a")
+    private WebElement addBookBtn;
+
     public void editBookBtn() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
         wait.until(ExpectedConditions.elementToBeClickable(editBookBtn)).click();
@@ -109,5 +112,12 @@ public class BooksPage extends BasePage {
         BrowserUtils.wait(1);
         Select select = new Select(bookCategoriesDropDown);
         select.selectByVisibleText(categori);
+    }
+
+
+    public void addBookBtn() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+        wait.until(ExpectedConditions.elementToBeClickable(addBookBtn)).click();
+        System.out.println("Clicking on 'Add book' button");
     }
 }
