@@ -1,4 +1,4 @@
-@login
+@login @smoke
 Feature: As user I want to be able to login under different roles
 # this is a comment
 
